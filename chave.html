@@ -1,0 +1,143 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chave</title>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                background-color: #1e1e2f;
+                color: #ddd;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container {
+                background-color: #292943;
+                border-radius: 12px;
+                padding: 40px;
+                text-align: center;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+                width: 100%;
+                max-width: 600px;
+            }
+            h1 {
+                font-size: 32px;
+                color: #ff79c6;
+                margin-bottom: 20px;
+                font-weight: 600;
+            }
+            p {
+                font-size: 16px;
+                color: #bbb;
+                margin-bottom: 20px;
+                font-weight: 300;
+                line-height: 1.6;
+            }
+            input {
+                padding: 10px;
+                font-size: 18px;
+                width: 100%;
+                border: 1px solid #444;
+                border-radius: 5px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                background-color: #222;
+                color: #fff;
+            }
+            button {
+                background-color: #ff79c6;
+                color: white;
+                border: none;
+                padding: 12px 40px;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 25px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+            }
+            button:hover {
+                background-color: #d14791;
+                transform: translateY(-3px);
+            }
+            button:focus {
+                outline: none;
+            }
+            #mensagem {
+                margin-top: 20px;
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .erro {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <p>Qual a chave para resolver o próximo enigma?</p>
+            <input type="text" id="resposta" placeholder="Digite a resposta" autofocus>
+            <button onclick="verificarResposta()">Enviar</button>
+            <p id="mensagem"></p>
+            <div id="botao-container"></div> 
+        </div>
+
+        <script>
+            let enterPressCount = 0; 
+            let enterTimeout;
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    enterPressCount++;
+
+                    if (enterPressCount === 1) {
+                        verificarResposta();
+                    } else if (enterPressCount === 2) {
+                        let botaoProximo = document.getElementById("botaoProximo");
+                        if (botaoProximo) {
+                            botaoProximo.click();
+                        }
+                    }
+
+                    clearTimeout(enterTimeout);
+                    enterTimeout = setTimeout(() => {
+                        enterPressCount = 0;
+                    }, 1000);
+                }
+            });
+
+            function verificarResposta() {
+                let resposta = document.getElementById("resposta").value.toLowerCase();
+                let mensagem = document.getElementById("mensagem"); 
+                let botaoContainer = document.getElementById("botao-container"); 
+
+                mensagem.classList.remove("erro");
+
+                if (resposta === "11") { 
+                    mensagem.innerText = "Chave aceita"; 
+
+                    if (!document.getElementById("botaoProximo")) {
+                        let botao = document.createElement("button");
+                        botao.id = "botaoProximo";
+                        botao.innerText = "Próximo";
+                        botao.onclick = function() {
+                            window.location.href = "mensagem.html";
+                        };
+                        botaoContainer.appendChild(botao);
+                    }
+                    
+                    mensagem.innerHTML += "<br><a href='https://site112.com/cifra-de-cesar-codificar-descodificar' target='_blank'>Cifra de César</a>";
+                } else {
+                    mensagem.innerText = "Chave inválida.";
+                    mensagem.classList.add("erro");
+                }
+            }
+        </script>
+
+    </body>
+    </html>

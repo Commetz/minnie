@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigmas da Madrugada</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #292943;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff79c6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 30px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        button {
+            background-color: #ff79c6;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #d14791;
+            transform: translateY(-3px);
+        }
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vinda Paula!</h1>
+        <p>Fiz esses mini-sites com alguns enigmas pra você, tem muito por trás, e eu sei que você vai conseguir desvendar tudo!</p>
+        <button onclick="iniciarJogo()">Começar</button>
+    </div>
+
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                iniciarJogo();
+            }
+        });
+    
+        function iniciarJogo() {
+            window.location.href = "pista1.html";
+        }
+    </script>    
+</body>
+</html>

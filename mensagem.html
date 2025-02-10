@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #292943;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1000px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff79c6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 15px;
+            color: #bbb;
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            border: 1px solid #444;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: #222;
+            color: #fff;
+        }
+        button {
+            background-color: #ff79c6;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #d14791;
+            transform: translateY(-3px);
+        }
+        button:focus {
+            outline: none;
+        }
+        #mensagem {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .erro {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p>Alfwl, dó acpntdlgl qlwlc tddz, déctz, tyopapyopyepxpyep ol dfl cpdazdel, yãz bfpcz bfp z nwtxl pyecp l rpyep xfop, rzdez op nzxz ld nztdld pdeãz, xld rzdelctl bfp gznê dzfmpddp, dzfmpddp bfp pf rzdez xftez xftez xpdxz op gznê, bfp dzfmpddp bfp px ezold yzddld xpydlrpyd ecznlold pf dpxacp xp aprlgl apcrfyelyoz dp pdelgl leclalwslyoz zf dp pf pcl dó fx totzel, rzdez xftez ol dfl nzxalystl, xftez zmctrloz azc tddz...
+            P wá glxzd yód ypddl uzcylol, yãz é xpdxz? Lnsz bfp opaztd olbfpwp otl ld nztdld yãz qtnlclx l xpdxl pyecp l rpyep, ep dpyet xltd lqldelol, dpyet bfp gznê qtnzf mpx xpyzd nzyqzcelgpw oz bfp lyepd, p efoz mpx, pf dó bfpctl dlmpc dp qtk lwrz pccloz, pdapcz bfp l rpyep ltyol nzyetyfp mpx, p, pf cplwxpyep rzdelctl op epc xltd otld  nzxz lbfpwl dpiel-qptcl... 
+            Qtk pddpd xtyt dtepd, yz tyeftez yãz DÓ op opnwlclc ld nztdld bfp epysz dpyetoz, xld elxméx apwz xzetgz op epyelc xp laczitxlc xltd op gznê, pf dpt bfp gznê é xptz znfalol, pf pyepyoz tddz, xld azc lwrfx xzetgz epysz dpyetoz lwrz pdeclysz pyecp l rpyep p yãz apydz bfp dpul dó azc dfl qlwel op epxaz, pyepyop? Pf dó bfpctl dlmpc tddz...
+            Dzmcp z bfp pf epysz dpyetoz azc gznê, é lwrz mpx pyrclçloz vvvvv, yz tytntz pf cplwxpyep ep gtl lapyld nzxz fxl lxtrl, p qzt opddp uptez azc fx mzx epxaz leé bfp, l rpyep nzygpcdzf, gznê nzyezf nztdld dzmcp gznê, pf nzyept nztdld dzmcp xtx, p ylbfpwl dpiel-qptcl px bfp alddlxzd acletnlxpyep z otl tyepcz ufyezd, xp qpk nzxpçlc l gpc nztdld px gznê, z bflyez gznê é mzytel, z bflyez é pdqzcçlol p opotnlol l qlnfwolop, z bflyez gznê é tyepwtrpyep... p z bflyez l nzc lkfw nzxmtyl nzx gznê, nzxz qtnl wtyol op clmz op nlglwz, pf dó acpntdz qlwlc. 
+            Acpntdz qlwlc bfp epysz fxl afel op fxl loxtclçãz azc et, p bfpctl xftez xftez dlmpc dp epysz lwrfxl nslynp nzyetrz, dp gznê ezal ezxlc fx dzcgpep zf tc l fxl nlqpepctl, bfpctl xftez dlmpc dp epx lwrfxl azddtmtwtolop ol rpyep dpc lwrz xltd lwrfx otl...</p>
+        <p id="declaracao"></p>
+    </div>
+
+    <!-- Resposta escondida: preciso -->
+
+    <script>
+        declaracao.innerHTML += "<br><button onclick='window.location.href=\"declaracao.html\"'>Próximo</button>";
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                window.location.href = "declaracao.html";
+            }
+        });
+    </script>
+</body>
+</html>

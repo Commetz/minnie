@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Paula</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #292943;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 1000px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff79c6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+            color: #bbb;
+            margin-bottom: 20px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            border: 1px solid #444;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: #222;
+            color: #fff;
+        }
+        button {
+            background-color: #ff79c6;
+            color: white;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #d14791;
+            transform: translateY(-3px);
+        }
+        button:focus {
+            outline: none;
+        }
+        .heart {
+            font-size: 80px;
+            color: #ff79c6;
+            margin: 12px 0;
+            display: inline-block;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- https://charactercalculator.com/pt/binary-translator/ -->
+    <!-- meio bobo... mas achei quase perfeito... -->
+    <!-- 1101000 1110100 1110100 1110000 1110011 111010 101111 101111 1111001 1101111 1110101 1110100 1110101 101110 1100010 1100101 101111 110101 1101010 1000101 111001 1010000 110100 1000100 1100101 1100001 1000110 1010101 111111 1110011 1101001 111101 1001100 1100001 1001110 1100010 1101101 1110010 1001011 1110101 110011 1001110 1110110 1001011 110111 1110010 1101010 1101100 -->
+
+    <div class="container">
+        <h1>Parabéns! Você chegou ao fim!!</h1>
+        <p>Tente o Enigma 4 usando o código 1011101!</p>
+        <p>Você leu muita coisa...</p>
+        <p class="heart">❤</p>
+        <p>Agora, eu quero te contar algo muito importante...</p>
+        <p>Eu tenho sentimentos muito especiais por você e queria que soubesse o quanto você é importante para mim!</p>
+
+        <p>Tenho alguma chance contigo?</p>
+        
+        <button onclick="respostaSim()">Sim</button>
+        <button onclick="respostaNao()">Não</button>
+    </div>
+
+    <script>
+        function respostaSim() {
+            window.location.href = "sim.html";  
+        }
+
+        function respostaNao() {
+            window.location.href = "nao.html";  
+        }
+
+        document.body.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                if (document.activeElement.textContent === "Sim") {
+                    respostaSim();
+                } else if (document.activeElement.textContent === "Não") {
+                    respostaNao();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
